@@ -3,23 +3,23 @@ variable "access_key" {}
 variable "secret_key" {}
 
 variable "region" {
-  default = "eu-west-1"
+  default = "us-west-2"
 }
 
 // Availability zone 1 for the region
 variable "az1" {
-  default = "eu-west-1a"
+  default = "us-west-2a"
 }
 
 // Availability zone 2 for the region
 variable "az2" {
-  default = "eu-west-1c"
+  default = "us-west-2c"
 }
 
 // IAM role that has proper permission for HA
 // Refer to the URL For details. https://docs.fortinet.com/document/fortigate-public-cloud/7.2.0/aws-administration-guide/229470/deploying-fortigate-vm-active-passive-ha-aws-between-multiple-zones
 variable "iam" {
-  default = "<AWS IAM ROLE NAME>" //Put in the IAM Role name created
+  default = "HA_Role" //Put in the IAM Role name created
 }
 
 variable "vpccidr" {
@@ -67,7 +67,7 @@ variable "license_type" {
 // instance architect
 // Either arm or x86
 variable "arch" {
-  default = "x86"
+  default = "arm"
 }
 
 // instance type needs to match the architect
@@ -75,7 +75,7 @@ variable "arch" {
 // c6g.xlarge is arm
 // For detail, refer to https://aws.amazon.com/ec2/instance-types/
 variable "size" {
-  default = "c5n.xlarge"
+  default = "c6g.xlarge"
 }
 
 // AMIs for FGTVM-7.2.6
@@ -367,7 +367,7 @@ variable "fgtami" {
 
 //  Existing SSH Key on the AWS 
 variable "keyname" {
-  default = "<AWS SSH KEY>"
+  default = "key_fortigate"
 }
 
 // HTTPS access port
