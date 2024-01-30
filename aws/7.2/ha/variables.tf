@@ -1,6 +1,6 @@
 //AWS Configuration
-variable "access_key" {}
-variable "secret_key" {}
+variable "ACCESS_KEY" {}
+variable "SECRET_KEY" {}
 
 variable "region" {
   default = "us-west-2"
