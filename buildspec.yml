@@ -20,7 +20,7 @@ phases:
       - echo "Prepare terraform file"
       - git clone https://github.com/davidortizac/fortigate-terraform-deploy.git
       - cd fortigate-terraform-deploy/aws/7.2/single
-      - sudo terraform init
+      - terraform init
       - echo "Prepare terraform initialized"
       - echo "Plan terraform deployment"
       - cd fortigate-terraform-deploy/aws/7.2/single
