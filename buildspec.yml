@@ -4,6 +4,7 @@ phases:
   install:
     commands:
       - sudo apt update 
+      - sudo apt install git
       - sudo apt install python3-pip -y
       - sudo pip install boto3
       - wget https://releases.hashicorp.com/terraform/1.4.6/terraform_1.4.6_linux_arm64.zip
@@ -13,6 +14,7 @@ phases:
       - apt-get update
       - apt-cache search source
       - echo "Prepare terraform file"
+      - git clone https://github.com/davidortizac/fortigate-terraform-deploy.git 
       - cd fortigate-terraform-deploy/aws/7.2/single
       - terraform init
   pre_build:
