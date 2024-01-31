@@ -23,12 +23,12 @@ phases:
       - terraform init
       - echo "Prepare terraform initialized"
       - echo "Plan terraform deployment"
-      - cd fortigate-terraform-deploy/aws/7.2/single
+#      - cd fortigate-terraform-deploy/aws/7.2/single
       - terraform plan
   build:
     commands:
      - echo "Apply terraform deployment"
-     - cd fortigate-terraform-deploy/aws/7.2/single
+#     - cd fortigate-terraform-deploy/aws/7.2/single
      - terraform apply -auto-approve
      - echo "Apply stage finished"
   post_build:
