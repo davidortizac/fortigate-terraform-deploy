@@ -3,8 +3,8 @@ version: 0.2
 phases:
   install:
     commands:
-      - sudo apt update
-      - sudo apt install python3-pip
+      - sudo apt update 
+      - sudo apt install python3-pip -y
       - sudo pip install boto3
       - wget https://releases.hashicorp.com/terraform/1.4.6/terraform_1.4.6_linux_arm64.zip
       - unzip terraform_1.4.6_linux_arm64.zip
