@@ -29,9 +29,13 @@ phases:
      - echo "Apply terraform deployment"
      - terraform apply -auto-approve
      - echo "Apply stage finished"
+     #- cd fortigate-terraform-deploy/aws/7.2/single
+     - echo "Copying terraform.tfstate to shared folder"
+     - aws s3 cp terraform.tfstate https://s3.us-west-2.amazonaws.com/forti.tfstates/tfstates/
+     - echo "Terraform state file copied successfully"     
   post_build:
     commands:
-      - cd fortigate-terraform-deploy/aws/7.2/single
-      - echo "Copying terraform.tfstate to shared folder"
-      - aws s3 cp terraform.tfstate https://s3.us-west-2.amazonaws.com/forti.tfstates/tfstates/
-      - echo "Terraform state file copied successfully"      
+      #- cd fortigate-terraform-deploy/aws/7.2/single
+      #- echo "Copying terraform.tfstate to shared folder"
+      #- aws s3 cp terraform.tfstate https://s3.us-west-2.amazonaws.com/forti.tfstates/tfstates/
+     - echo "Terraform  Finished successfully"      
