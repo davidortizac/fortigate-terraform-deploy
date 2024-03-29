@@ -31,5 +31,8 @@ phases:
      - echo "Apply stage finished"
   post_build:
     commands:
-      - echo "Nothing to do in the post_build for now"
-      
+      - echo "Copying terraform.tfstate to shared folder"
+      - aws s3 cp terraform.tfstate https://s3.us-west-2.amazonaws.com/forti.tfstates/tfstates/
+      #s3://your-shared-bucket-name/path/to/terraform.tfstate
+      # Reemplaza 'your-shared-bucket-name' y 'path/to/terraform.tfstate' con los valores correctos
+      - echo "Terraform state file copied successfully"      
